@@ -111,29 +111,29 @@ class Q3isk(CBaseHostClass):
 
     def listMainMenu(self, cItem):
         printDBG('Q3isk.listMainMenu')
+        # MAIN_CAT_TAB = [
+            # {'category': 'movies_categories', 'title': 'Movies'},
+            # {'category': 'series_categories', 'title': 'Series'},
+        # ] + self.searchItems()
         MAIN_CAT_TAB = [
-            {'category': 'movies_categories', 'title': 'Movies'},
-            {'category': 'series_categories', 'title': 'Series'},
+            {'category': 'list_movies','title': 'Movies','url': self.getFullUrl('category/افلام-تركية-مترجمة/')},
+            {'category': 'series_categories','title': 'Series'},
         ] + self.searchItems()
         self.listsTab(MAIN_CAT_TAB, cItem)
-
         # Define subcategories for each folder
-        self.MOVIES_CAT_TAB = [
-            {'category': 'list_movies', 'title': 'Movies', 'url': self.getFullUrl('category/افلام-تركية-مترجمة/')}
-        ]
-
+        # self.MOVIES_CAT_TAB = [
+            # {'category': 'list_movies', 'title': 'Movies', 'url': self.getFullUrl('category/افلام-تركية-مترجمة/')}
+        # ]
         self.SERIES_CAT_TAB = [
-            {'category': 'list_series', 'title': 'Full Series', 'url': self.getFullUrl('جميع-المسلسلات-التركية/')},
-            {'category': 'list_movies', 'title': 'Last Added Episodes', 'url': self.getFullUrl('آخر-الحلقات-المضافة/')},
+            {'category': 'list_series', 'title': 'Full Series', 'url': self.getFullUrl('جميع-المسلسلات-2d7ig/')},
+            {'category': 'list_movies', 'title': 'Last Added Episodes', 'url': self.getFullUrl('episodes/')},
         ]
-
     def listSeriesCategories(self, cItem):
         printDBG('Q3isk.listSeriesCategories')
         self.listsTab(self.SERIES_CAT_TAB, cItem)
-
-    def listMoviesCategories(self, cItem):
-        printDBG('Q3isk.listMoviesCategories')
-        self.listsTab(self.MOVIES_CAT_TAB, cItem)
+    # def listMoviesCategories(self, cItem):
+        # printDBG('Q3isk.listMoviesCategories')
+        # self.listsTab(self.MOVIES_CAT_TAB, cItem)
 
     def exploreItems(self, cItem):
         printDBG('Q3isk.exploreItems >>> %s' % cItem)
